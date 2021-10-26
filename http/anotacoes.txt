@@ -1,0 +1,56 @@
+// para ver oq significa os status https://http.cat/
+
+Aula 01 - Criar um ser simples
+
+
+    // requisição, resposta
+
+    const http = require("http")
+
+    http.createServer((req, res) => {
+        //writeHead -> escreve status e reasonPhrase
+        res.writeHead(200, { //200 -> status ok
+            "Content-Type": 'text/plain' // texto comum
+        })
+
+        res.write("Saida no browser \nIsso que sai no browser") // oq vai ver
+        res.end()
+    }).listen(2000)
+
+
+Aula 01 - Rotas
+    Criar navegação
+
+    listen rescebe porta, host, função backlog (so o primeiro obrigatório)
+    server.listen(port, host, () => console.log("Servidor rodando"))
+
+
+    retornar texto simples
+        "Content-type": "text/plain"
+    retornar em formato HTML
+        "Content-type": "text/html"
+
+    Verificar url
+        req.url
+
+    const url = require('url')
+        res.write(req.url) -> retornar o end url atual
+
+Aula 02 - FS Para Renderizar arquivos
+
+
+    const server = http.createServer((req, res) => {
+        fs.readFile("index.html", (erro, arquivo) => {
+            //readFile -> ler arquivo
+            //appendFile -> anexar arquivo
+            res.writeHead(200, {
+                "Content-type": "text/html"
+            })
+            res.write(arquivo)
+
+            return res.end()
+        }) 
+    })
+
+
+    server.listen(port || 3000, () => console.log("servidor rodando"))

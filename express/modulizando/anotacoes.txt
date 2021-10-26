@@ -1,0 +1,8 @@
+npm i express 
+npm i router 
+
+aprendi a criar rotas e passar parametros na url
+aquela forma que usava era uma extensão que chama live server e so dava pra rodar localmente
+
+aqui to aprendendo a fazer servidor mesmo
+pra salvar as coisas no banco de dados
