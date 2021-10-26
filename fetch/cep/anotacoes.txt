@@ -1,0 +1,15 @@
+blur -> assim qeu tirar o foco pega oq foi digitad
+
+No site via cep recebe a url:
+    https://viacep.com.br/ws/38414315/json/
+        não tem traço, corrigir o traço 
+
+Selecionar dinamicamente
+    const showData = (result) => {
+        for(const campo in result) {
+        // ver se o campo existe
+            if(document.querySelector("#"+campo)) {
+                console.log(campo)
+            }
+        }
+    }
